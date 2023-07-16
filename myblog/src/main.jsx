@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import {createBrowserRouter, RouteProvider, Router} from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import './index.css';
+import {createBrowserRouter, RouterProvider, Route} from 'react-router-dom';
 
 // Páginas
-import home from './routes/home.jsx'
-import newPost from './routes/newPost.jsx'
+import Home from './routes/home.jsx';
+import NewPost from './routes/NewPost.jsx';
 
 const router = createBrowserRouter([
   {
@@ -14,11 +14,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <home />
+        element: <Home />,
       },
       {
         path: "/new",
-        element: <newPost />
+        element: <NewPost />,
       }]
   }
   ])
