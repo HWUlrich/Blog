@@ -6,7 +6,7 @@ import {createBrowserRouter, RouterProvider, Route} from 'react-router-dom';
 
 // Páginas
 import Home from './routes/home.jsx';
-import NewPost from './routes/NewPost.jsx';
+import NewPost from './routes/newPost.jsx';
 
 const router = createBrowserRouter([
   {
