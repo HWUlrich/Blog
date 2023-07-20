@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
@@ -15,10 +14,11 @@ const Home = () => {
       const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
       
       const data = response.data;
-      
+      setPosts(data);
+
     } catch (error) {
       console.log(error);
-      alert ("Falta de conxão com o Banco de Dados");
+      //alert ("Falta de conxão com o Banco de Dados");
     }
 
   }
@@ -28,8 +28,28 @@ const Home = () => {
   }, [])
 
   return (
-    <div>Home</div>
+    <div>
+      <h1>Últimos Posts</h1>
+      {posts.length === 0 ? (<p>Carregando...</p>) : (
+  
+        posts.map((post) => (
+          <div className="post" key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+            <Link to={`./posts${post.id}`} className='btn'>
+              Ler mais
+            </Link>
+
+          </div>
+
+        )
+
+        )
+
+
+      )}
+    </div>
   )
 }
 
-export default Home
+export default Home;

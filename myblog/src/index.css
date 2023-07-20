@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: gray;
+    background-color: #0e1217;
     color: white;
 }
 
@@ -15,7 +15,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: azure;
+    color: #fff;
     opacity: 0.7;
     transition: 0.3s;
 }
